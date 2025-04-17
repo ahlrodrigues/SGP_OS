@@ -1,0 +1,10 @@
+# OS generated files #
+######################
+.*
+*~
+
+# NOT gnore files #
+######################
+!.gitignore
+
+

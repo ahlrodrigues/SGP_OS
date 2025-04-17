@@ -1,0 +1,9 @@
+INSTRUÇÕES:
+
+1. logue-se como root
+2. Descompacte o arquivo SGP_OS.tar.gz na pasta /opt (tar -xvf SGP_OS.tar.gz -C /opt)
+3. Acrescente seu login e senha do SGP no arquivo /opt/SGP/.env
+4. Abra o crontab (crontab -e)
+5. Acrescente a linha para rodar o script todos os dias às 16:30 (30 16 * * * /usr/bin/python3 /opt/SGP/SGP_OS.py)
+6. Rode o script setup.sh para configurar o ambiente (chmod +x & /opt/setup.sh)
+6. Teste o script, se funcionar manualmente, também funcionará pelo cron (python /opt/SGP_OS.py)
