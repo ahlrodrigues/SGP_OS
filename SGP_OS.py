@@ -29,6 +29,8 @@ def executar_em_silencio():
     try:
         driver.get("http://sgp.net4you.com.br:8000/admin/atendimento/relatorios/ocorrencia/os/")
 
+
+
         # LOGIN
         campo_login = wait.until(EC.presence_of_element_located((By.ID, "id_username")))
         campo_senha = wait.until(EC.presence_of_element_located((By.NAME, "password")))
@@ -58,6 +60,25 @@ def executar_em_silencio():
         $('#id_tecnicos').trigger('change');
         """
         driver.execute_script(js_code)
+
+         # DATA
+        from datetime import datetime
+
+        # Obter a data atual no formato DD/MM/YYYY
+        data_atual = datetime.now().strftime('%d/%m/%Y')
+
+        # Código Selenium para preencher as datas automaticamente
+        campo_data_inicial = wait.until(EC.presence_of_element_located((By.ID, "id_data_agendamento_inicial")))
+        campo_data_final = wait.until(EC.presence_of_element_located((By.ID, "id_data_agendamento_final")))
+
+        campo_data_inicial.clear()
+        campo_data_inicial.send_keys(data_atual)
+
+        campo_data_final.clear()
+        campo_data_final.send_keys(data_atual)
+
+        # Opcional: se precisar clicar fora do campo para garantir que o preenchimento foi aceito
+        campo_data_final.send_keys(Keys.TAB)
 
         # Seleciona 'Conclusão Checklist'
         campo_select2 = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "span.select2-selection--multiple")))
