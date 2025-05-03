@@ -47,7 +47,7 @@ def executar_em_silencio():
         seletor_status.select_by_value("0")
 
         # Seleciona técnicos com JavaScript
-        tecnicos_para_selecionar = ["JOAO PAULO", "ELIAS", "CABRAL", "DIEGO", "ERIKI", "FRANCIVALDO", "MICAEL"]
+        tecnicos_para_selecionar = ["JOAO PAULO", "ELIAS", "CABRAL", "DIEGO", "ERIKI", "FRANCIVALDO", "MICAEL", "TALIS"]
         nomes_js = "[" + ",".join([f'\"{nome}\"' for nome in tecnicos_para_selecionar]) + "]"
         js_code = f"""
         var select = document.getElementById('id_tecnicos');
